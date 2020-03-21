@@ -25,7 +25,42 @@ namespace AdvancedNet
 
         public void ShowInfo2(int id)
         {
-            Console.WriteLine($"Show Info Method {id}");
+            Console.WriteLine($"Show Info2 Method {id}");
+        }
+
+        public void ShowInfo3()
+        {
+            Console.WriteLine($"Show Info3 Method ");
+        }
+
+        public void ShowInfo3(int id)
+        {
+            Console.WriteLine($"Show Info3 Method {id}");
+        }
+
+        public void ShowInfo3(int id,string name)
+        {
+            Console.WriteLine($"Show Info3 Method {id} {name}");
+        }
+
+        public void ShowInfo3(int id,int age)
+        {
+            Console.WriteLine($"Show Info3 Method {id} {age}");
+        }
+
+        public static void ShowInfo4(string name)
+        {
+            Console.WriteLine($"Show Info3 Method {name} ");
+        }
+
+        private void ShowInfo5()
+        {
+            Console.WriteLine("Private method showinfo5");
+        }
+
+        public void ShowInfo6<T1,T2>(T1 a,T2 b)
+        {
+            Console.WriteLine($"Private method showinfo5 {a} and {b} ");
         }
 
         public static void Show<T>(T tParameter)

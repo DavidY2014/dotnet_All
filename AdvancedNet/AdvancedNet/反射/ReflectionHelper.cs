@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using Advanced.Sql;
+using AdvancedNet.Models;
 
 namespace AdvancedNet
 {
@@ -77,15 +78,65 @@ namespace AdvancedNet
                     //object oGeneric = Activator.CreateInstance(typeMake);
                 }
                 {
-                    Console.WriteLine("*************GenericMethod****************");
+                    //Console.WriteLine("*************GenericMethod****************");
+                    //Assembly assembly = Assembly.Load("AdvancedNet");
+                    //Type type = assembly.GetType("AdvancedNet.GenericMethod");
+                    //object oInstance = Activator.CreateInstance(type);
+                    //MethodInfo method = type.GetMethod("ShowInfo");
+                    //method.Invoke(oInstance, null);
+                    //MethodInfo method2 = type.GetMethod("ShowInfo2");
+                    //method2.Invoke(oInstance,new object[] { 2020});
+                    //MethodInfo method3 = type.GetMethod("ShowInfo3",new Type[] { });
+                    //method3.Invoke(oInstance, null);
+                    //MethodInfo method3_1 = type.GetMethod("ShowInfo3", new Type[] {typeof(int) });
+                    //method3_1.Invoke(oInstance, new object[] { 2});
+                    //MethodInfo method4 = type.GetMethod("4", new Type[] { typeof(string) });
+                    //method4.Invoke(null, new object[] { "静态方法" });//静态方法无所谓要不要实例
+
+                }
+                {
+                    //Console.WriteLine("*************反射调用私有方法****************");
+                    //Assembly assembly = Assembly.Load("AdvancedNet");
+                    //Type type = assembly.GetType("AdvancedNet.GenericMethod");
+                    //object oInstance = Activator.CreateInstance(type);
+                    //var method = type.GetMethod("ShowInfo4",BindingFlags.Instance|BindingFlags.NonPublic);//单元测试可以突破限制 
+                    //method.Invoke(oInstance,null);
+                }
+                {
+                    Console.WriteLine("*************反射调用泛型方法****************");
                     Assembly assembly = Assembly.Load("AdvancedNet");
                     Type type = assembly.GetType("AdvancedNet.GenericMethod");
                     object oInstance = Activator.CreateInstance(type);
-                    MethodInfo method = type.GetMethod("ShowInfo");
-                    method.Invoke(oInstance, null);
-                    MethodInfo method2 = type.GetMethod("ShowInfo2");
-                    method2.Invoke(oInstance,new object[] { 2020});
+                    MethodInfo method = type.GetMethod("ShowInfo6"); //泛型方法
+                    var methodNew  = method.MakeGenericMethod(new Type[] { typeof(int), typeof(string) });
+                    methodNew.Invoke(oInstance, new object[] { 123, "test" });
+                }
 
+                {
+                    Console.WriteLine("*************通过反射来实现常规操作****************");
+                    Type type = typeof(People);
+                    object oPeople = Activator.CreateInstance(type);
+                    //设置属性
+                    foreach (var prop in type.GetProperties())
+                    {
+                        Console.WriteLine($"{type.Name} {prop.Name} {prop.GetValue(oPeople)}");
+                        if (prop.Name.Equals("Id"))
+                        {
+                            prop.SetValue(oPeople, 123);
+                        } else if (prop.Name.Equals("Name"))
+                        {
+                            prop.SetValue(oPeople, "jack");
+                        }
+                    }
+                    //设置字段
+                    foreach (var field in type.GetFields())
+                    {
+                        Console.WriteLine($"{type.Name} {field.Name} {field.GetValue(oPeople)}");
+                        if (field.Name.Equals("Age"))
+                        {
+                            field.SetValue(oPeople, 20);
+                        }
+                    }
                 }
 
             }
