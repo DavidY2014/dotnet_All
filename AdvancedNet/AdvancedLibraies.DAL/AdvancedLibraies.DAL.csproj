@@ -1,13 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Advanced.Sql\Advanced.Sql.csproj" />
-    <ProjectReference Include="..\AdvancedLibraies.DAL\AdvancedLibraies.DAL.csproj" />
     <ProjectReference Include="..\AdvancedLibraies.IDAL\AdvancedLibraies.IDAL.csproj" />
     <ProjectReference Include="..\AdvancedLibraies.Model\AdvancedLibraies.Model.csproj" />
   </ItemGroup>

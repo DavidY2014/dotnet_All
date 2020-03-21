@@ -11,3 +11,6 @@
 /AdvancedNet/AdvancedNet/bin/Debug/netcoreapp3.1
 /AdvancedNet/AdvancedNet/obj
 /AdvancedNet/GenericFramework/obj
+/AdvancedNet/AdvancedLibraies.DAL/obj
+/AdvancedNet/AdvancedLibraies.IDAL/obj
+/AdvancedNet/AdvancedLibraies.Model/obj
