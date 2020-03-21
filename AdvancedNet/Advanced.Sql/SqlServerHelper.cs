@@ -43,11 +43,18 @@ namespace Advanced.Sql
                 {
                     foreach (var prop in type.GetProperties())
                     {
-                        prop.SetValue(oObject, reader[prop.Name]);
+                        //如果为空类型，数据库存储为null时，赋值会报错
+                        prop.SetValue(oObject, reader[prop.Name]  is DBNull? null:reader[prop.Name]);
+                     
                     }
+                    return (T)oObject;
+                }
+                else
+                {
+                    return default(T);
                 }
             }
-            return (T)oObject;
+     
         }
 
 
