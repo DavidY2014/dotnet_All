@@ -7,6 +7,7 @@ namespace AdvancedLibraries.Factory
 {
     /// <summary>
     /// 工厂模式访问数据库，通过反射的方法
+    /// 工厂模式返回一个接口抽象，这样可以屏蔽细节
     /// </summary>
     public class SimpleFactory
     {
