@@ -13,5 +13,10 @@ namespace Advanced.Framework
             this.Info = info;
         }
 
+        public string GetRemark()
+        {
+            return this.Info;
+        }
+
     }
 }

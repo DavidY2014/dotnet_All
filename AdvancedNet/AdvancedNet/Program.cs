@@ -2,6 +2,7 @@
 using Advanced.Framework;
 using AdvancedNet.Models;
 
+
 namespace AdvancedNet
 {
     class Program
@@ -28,9 +29,35 @@ namespace AdvancedNet
             //};
             //InvokeTest.ManageStudent<VipStudent>(student);
 
-            var info =AttributeExtend.GetRemark(StudentState.Frozen);
-            Console.WriteLine(info);
+            //var info =AttributeExtend.GetRemark(StudentState.Frozen);
+            //StudentState state = StudentState.Frozen;
+            //var info = state.GetRemark();
+            //Console.WriteLine(info);
             #endregion
+
+            {
+                #region 数据验证
+                //var student = new VipStudent()
+                //{
+                //    Name = "TOM",
+                //    QQ = 3123123123131
+                //};
+                //if (student.Validata<VipStudent>())
+                //{ 
+                    
+                //}
+
+
+                #endregion
+            }
+
+            {
+                #region 委托调用
+                //DelegteTest.Run();
+                DelegteTest.MulitiRun();
+
+                #endregion
+            }
 
         }
     }

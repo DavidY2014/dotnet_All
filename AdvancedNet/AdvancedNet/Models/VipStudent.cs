@@ -10,6 +10,13 @@ namespace AdvancedNet.Models
     {
         public string VipGroup { get; set; }
 
+
+        /// <summary>
+        /// qq长度验证比如10000 - 999999999999  
+        /// </summary>
+        [DataValiate(10000,999999999)]
+        public long QQ { get; set; }
+
         [MyCustom]
         public void Homework()
         { 
