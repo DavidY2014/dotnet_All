@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Advanced.Framework\Advanced.Framework.csproj" />
     <ProjectReference Include="..\Advanced.Sql\Advanced.Sql.csproj" />
     <ProjectReference Include="..\AdvancedLibraies.DAL\AdvancedLibraies.DAL.csproj" />
     <ProjectReference Include="..\AdvancedLibraies.IDAL\AdvancedLibraies.IDAL.csproj" />

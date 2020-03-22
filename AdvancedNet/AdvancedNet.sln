@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedNet", "AdvancedNet\AdvancedNet.csproj", "{A38048B3-EF40-47D7-8D8F-78FA04668A44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedNet", "AdvancedNet\AdvancedNet.csproj", "{A38048B3-EF40-47D7-8D8F-78FA04668A44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced.Sql", "Advanced.Sql\Advanced.Sql.csproj", "{2414B699-FD9F-4DE2-BC3A-99791B77F3B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.Sql", "Advanced.Sql\Advanced.Sql.csproj", "{2414B699-FD9F-4DE2-BC3A-99791B77F3B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ado", "Ado", "{A51AA40B-4F9A-4E4B-A0FE-63194722C423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedLibraies.DAL", "AdvancedLibraies.DAL\AdvancedLibraies.DAL.csproj", "{21575DE8-28DC-4EDF-8013-638B14A02352}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedLibraies.DAL", "AdvancedLibraies.DAL\AdvancedLibraies.DAL.csproj", "{21575DE8-28DC-4EDF-8013-638B14A02352}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedLibraies.IDAL", "AdvancedLibraies.IDAL\AdvancedLibraies.IDAL.csproj", "{F8B00D0D-D9E2-458A-9B9E-D674B8248EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedLibraies.IDAL", "AdvancedLibraies.IDAL\AdvancedLibraies.IDAL.csproj", "{F8B00D0D-D9E2-458A-9B9E-D674B8248EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedLibraies.Model", "AdvancedLibraies.Model\AdvancedLibraies.Model.csproj", "{3DD4A5C2-CB1C-4BA9-B45D-BA0050A3514E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedLibraies.Model", "AdvancedLibraies.Model\AdvancedLibraies.Model.csproj", "{3DD4A5C2-CB1C-4BA9-B45D-BA0050A3514E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoMapModel", "AutoMapModel\AutoMapModel.csproj", "{C3C95DBC-DBF0-4F2B-A5F8-6A09DBB9676B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoMapModel", "AutoMapModel\AutoMapModel.csproj", "{C3C95DBC-DBF0-4F2B-A5F8-6A09DBB9676B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvancedLibraries.Factory", "AdvancedLibraries.Factory\AdvancedLibraries.Factory.csproj", "{DFC193F9-9872-40F5-9F37-6D46CCB50EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvancedLibraries.Factory", "AdvancedLibraries.Factory\AdvancedLibraries.Factory.csproj", "{DFC193F9-9872-40F5-9F37-6D46CCB50EAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advanced.Framework", "Advanced.Framework\Advanced.Framework.csproj", "{4A4AC211-923E-41DB-9254-0B9E37CD59C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{DFC193F9-9872-40F5-9F37-6D46CCB50EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC193F9-9872-40F5-9F37-6D46CCB50EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC193F9-9872-40F5-9F37-6D46CCB50EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A4AC211-923E-41DB-9254-0B9E37CD59C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A4AC211-923E-41DB-9254-0B9E37CD59C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A4AC211-923E-41DB-9254-0B9E37CD59C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A4AC211-923E-41DB-9254-0B9E37CD59C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
