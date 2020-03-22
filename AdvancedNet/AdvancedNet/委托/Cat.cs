@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdvancedNet.委托
+namespace AdvancedNet
 {
     public class Cat
     {

@@ -2,11 +2,38 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdvancedNet.委托
+namespace AdvancedNet
 {
     public class EventStandard
     {
+        /// <summary>
+        /// 关联
+        /// </summary>
+        public static void Init()
+        {
+            var buyer = new Buyer();
+            IphoneX phone = new IphoneX()
+            {
+                Price = 10000
+            };
+            phone.DiscountHandler += buyer.Buy;
 
+            //改了属性的价格，降价了，此时会触发事件的执行
+            phone.Price = 2000;
+        }
+    }
+
+
+    /// <summary>
+    /// 关注者，订阅者
+    /// </summary>
+    public class Buyer
+    {
+        //参数需要和eventhandler参数一致
+        public void Buy(object? sender, EventArgs e)
+        {
+            IphoneX phone = (IphoneX)sender;
+        }
     }
 
     public class XEventArgs : EventArgs
@@ -16,6 +43,10 @@ namespace AdvancedNet.委托
 
     }
 
+
+    /// <summary>
+    /// 发布者,在条件达到的情况下触发事件行为
+    /// </summary>
     public class IphoneX
     { 
         public int Id { get; set; }
