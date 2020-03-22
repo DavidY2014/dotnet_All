@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
+using Advanced.Framework.Attributes;
 
 namespace Advanced.Framework
 {
@@ -9,6 +11,25 @@ namespace Advanced.Framework
     /// </summary>
     public static class AttributeExtend
     {
+        /// <summary>
+        /// 这个方法可以在sql拼接中使用，把model中的映射字段替换成特性的字段名
+        /// </summary>
+        /// <param name="property"></param>
+        /// <returns></returns>
+        public static string GetColumnName(this PropertyInfo property)
+        {
+            if (property.IsDefined(typeof(DBColumnAttribute), true))
+            {
+                DBColumnAttribute attribute = (DBColumnAttribute)property.GetCustomAttribute(typeof(DBColumnAttribute), true);
+                return attribute.GetColumnName();
+            }
+            else
+            {
+                return property.Name;
+            }
+        }
+
+
         public static string GetRemark(this StudentState value)
         {
             Type type = value.GetType();

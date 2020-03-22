@@ -8,6 +8,9 @@ namespace AdvancedNet.Linq
 {
     /// <summary>
     /// Linq的扩展实现方式也是通过扩展方法+委托实现的
+    /// linq to object 针对内存数据
+    /// linq to sql 针对数据库数据
+    /// 两者操作的对象不同，传入的委托有区别
     /// </summary>
     public static class LinqExtend
     {
