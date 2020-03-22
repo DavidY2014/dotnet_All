@@ -19,3 +19,8 @@
 /AdvancedNet/.vs/AdvancedNet/DesignTimeBuild
 /AdvancedNet/Advanced.Framework/bin/Debug/netcoreapp3.1
 /AdvancedNet/Advanced.Framework/obj
+/AdvancedNet/AdvancedLibraies.DAL/bin/Debug/netcoreapp3.1
+/AdvancedNet/AdvancedLibraies.IDAL/bin/Debug/netcoreapp3.1
+/AdvancedNet/AdvancedLibraies.Model/bin/Debug/netcoreapp3.1
+/AdvancedNet/AdvancedLibraries.Factory/bin/Debug/netcoreapp3.1
+/AdvancedNet/AutoMapModel/bin/Debug/netcoreapp3.1
