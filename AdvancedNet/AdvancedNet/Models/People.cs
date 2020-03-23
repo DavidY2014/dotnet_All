@@ -15,4 +15,15 @@ namespace AdvancedNet.Models
 
 
     }
+
+    public class PeopleCopy
+    {
+        public int Id { get; set; } //property
+        public string Name { get; set; }
+
+        public int Age; //field
+
+
+
+    }
 }
