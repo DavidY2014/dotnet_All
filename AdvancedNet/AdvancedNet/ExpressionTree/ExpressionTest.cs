@@ -16,7 +16,13 @@ namespace AdvancedNet
         /// </summary>
         public static void Test()
         {
-            Expression<Func<People, bool>> lambda = x => x.Age > 5;
+            Expression<Func<People, bool>> lambda = x => x.Age > 5
+                                                        && x.Id < 5
+                                                        && x.Id == 3
+                                                        && x.Name.StartsWith("1")
+                                                        && x.Name.EndsWith("1")
+                                                        && x.Name.Contains("1");
+
             //组装了expression
             new List<People>().AsQueryable().Where(x => x.Age > 5 && x.Id == 10);
             //解析expression并动态生成sql,区别反射动态拼装sql
@@ -24,6 +30,18 @@ namespace AdvancedNet
             ConditionBuilderVisitor vistor = new ConditionBuilderVisitor();
             vistor.Visit(lambda);
             Console.WriteLine(vistor.Condition());
+
+
+            #region 表达式连接，多个判断条件的连接
+            {
+                Expression<Func<People, bool>> lambda1 = x => x.Age > 5;
+                Expression<Func<People, bool>> lambda2 = x => x.Id > 5;
+                Expression<Func<People, bool>> lambda3 = lambda1.And(lambda2);
+                Expression<Func<People, bool>> lambda4 = lambda1.Or(lambda2);
+                Expression<Func<People, bool>> lambda5 = lambda1.Not();
+                Do1(lambda3);
+            }
+            #endregion
         }
 
 
@@ -81,6 +99,22 @@ namespace AdvancedNet
         { 
             
         }
+
+        #region 数据测试
+        private static void Do1(Expression<Func<People,bool>> func)
+        {
+            List<People> people = new List<People>()
+            {
+                new People(){ Id=4,Name="123",Age=4},
+                new People(){ Id=5,Name="234",Age=5},
+                new People(){ Id=6,Name="345",Age=6},
+            };
+            List<People> peopleList = people.Where(func.Compile()).ToList();
+        }
+
+
+
+        #endregion
 
     }
 }
