@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using Advanced.NetFrame.WebAPI.Models;
 
 namespace Advanced.NetFrame.WebAPI.Controllers
 {
@@ -58,6 +60,41 @@ namespace Advanced.NetFrame.WebAPI.Controllers
         public string Get(int id, int typeId)
         {
             return $"value-Type {id} {typeId}";
+        }
+
+        [HttpGet]
+        public string GetUserById(int id)
+        {
+            string idParam = HttpContext.Current.Request.QueryString["id"];
+            
+            return null;
+        }
+
+        /// <summary>
+        /// 这种方式入参无法直接获取信息，需要通过querystring
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IEnumerable<User> GetUserById(User user)
+        {
+            string idParam = HttpContext.Current.Request.QueryString["id"];
+            string nameParam = HttpContext.Current.Request.QueryString["Name"];
+            return null;
+        }
+
+        /// <summary>
+        /// 这种方式如果前端js的data为一个对象，那么后端通过加[FromUri]获取实体对象
+        /// 数据
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IEnumerable<User> GetUserByModel([FromUri] User user)
+        {
+            string idParam = HttpContext.Current.Request.QueryString["id"];
+            string nameParam = HttpContext.Current.Request.QueryString["Name"];
+            return null;
         }
 
 
