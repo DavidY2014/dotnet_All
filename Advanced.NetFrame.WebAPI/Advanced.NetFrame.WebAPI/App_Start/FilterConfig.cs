@@ -11,6 +11,7 @@ namespace Advanced.NetFrame.WebAPI
             filters.Add(new HandleErrorAttribute());
             //全局生效，但是登陆接口可以去除掉，加个特性
             filters.Add(new CustomBasicAuthorizeAttribute());
+            filters.Add(new CustomExceptionFilterAttribute());
         }
     }
 }

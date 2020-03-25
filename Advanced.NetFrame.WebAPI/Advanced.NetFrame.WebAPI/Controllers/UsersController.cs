@@ -54,6 +54,13 @@ namespace Advanced.NetFrame.WebAPI.Controllers
             return null;
         }
 
+        [HttpGet]
+        [CustomExceptionFilter]
+        public IEnumerable<User> GetByName()
+        {
+            throw new Exception("123");//此时会进入异常特性
+        }
+
 
         #endregion
 

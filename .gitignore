@@ -35,3 +35,9 @@
 /AdvancedNet/Advanced.WebAPI/obj
 /Advanced.NetFrame.WebAPI/Advanced,NetFramework.Intefaces/obj/Debug
 /Advanced.NetFrame.WebAPI/Advanced.Framework.IInterfaces/bin/Debug
+/Advanced.NetFrame.WebAPI/Advanced.Framework.MVC5/bin
+/Advanced.NetFrame.WebAPI/Advanced.Framework.MVC5/obj/Debug
+/Advanced.NetFrame.WebAPI/Advanced.Framework.MVC5.Plugins/bin/Debug
+/Advanced.NetFrame.WebAPI/Advanced.Framework.MVC5.Plugins/obj/Debug
+/Advanced.NetFrame.WebAPI/Advanced.Framework.ThreadTest/bin/Debug
+/Advanced.NetFrame.WebAPI/Advanced.Framework.ThreadTest/obj/Debug

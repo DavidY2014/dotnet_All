@@ -1,0 +1,13 @@
+﻿@using  Advanced.Framework.MVC5.Models
+@model Advanced.Framework.MVC5.Models.User
+
+@{
+    ViewBag.Title = "Index";
+    User user = (User)ViewData["CurrentUserViewBag"];
+    //此页面默认的layout是shared里面的，如果设置为null，那么就没有模板页了
+}
+
+<h2>Index</h2>
+<h3>ViewData.CurrentUserViewBag: @user.Name</h3>
+<h3>ViewData.CurrentUserViewBag: @Model.Name</h3>
+<h3>TempData: @TempData["TestProp"]</h3>
