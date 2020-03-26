@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Management.DataFactories" Version="4.13.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Advanced.Framework\Advanced.Framework.csproj" />
     <ProjectReference Include="..\Advanced.Sql\Advanced.Sql.csproj" />
     <ProjectReference Include="..\AdvancedLibraies.DAL\AdvancedLibraies.DAL.csproj" />

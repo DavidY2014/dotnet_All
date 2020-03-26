@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,10 +39,10 @@ namespace Advanced.Framework.ThreadTest
                 //thread.Abort();//中止
                 
                 //判断线程状态等待
-                while (thread.ThreadState!= ThreadState.Stopped)
-                { 
+                //while (thread.ThreadState!= ThreadState.Stopped)
+                //{ 
                     
-                }
+                //}
 
                 //jion等待
                 thread.Join();//这段代码会等待前面线程执行完毕
@@ -131,5 +132,114 @@ namespace Advanced.Framework.ThreadTest
 
 
         }
+
+
+        /// <summary>
+        /// Task
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button3_Click(object sender, EventArgs e)
+        {
+            {
+                Task task = new Task(() => this.DoSomethingLong("button3_Click"));
+                task.Start();
+            }
+            {
+                Task task = Task.Run(() => this.DoSomethingLong(""));
+            }
+            {
+                TaskFactory taskFactory = Task.Factory;
+                Task task =  taskFactory.StartNew(() => this.DoSomethingLong(""));
+            }
+            {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+                Console.WriteLine("在Delay之前");
+                Task task = Task.Delay(2000)
+                    .ContinueWith(t =>
+                    {
+                        stopwatch.Stop();
+                        Console.WriteLine($"Delay 耗时{stopwatch.ElapsedMilliseconds}");
+                        Console.WriteLine($"This is ThreadId ={Thread.CurrentThread.ManagedThreadId.ToString()}");
+
+                    });
+                Console.WriteLine("在Delay之后");
+            }
+            {
+                TaskFactory taskFactory = new TaskFactory();
+                List<Task> taskList = new List<Task>();
+                taskList.Add(taskFactory.StartNew(() => this.DoSomethingLong("")));
+                taskList.Add(taskFactory.StartNew(() => this.DoSomethingLong("")));
+                taskList.Add(taskFactory.StartNew(() => this.DoSomethingLong("")));
+                taskList.Add(taskFactory.StartNew(() => this.DoSomethingLong("")));
+
+                Task.WaitAny(taskList.ToArray());
+                
+                Task.WaitAll(taskList.ToArray());//等待上面的任务全部完成，不然会阻塞
+
+                taskFactory.ContinueWhenAll(taskList.ToArray(), (t) =>
+                {
+
+                });
+
+            }
+            
+        }
+
+        /// <summary>
+        /// Parallel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Parallel 并发执行action线程，但是主线程会参与计算，此时界面阻塞
+            Parallel.Invoke(() => this.DoSomethingLong(""),
+                () => this.DoSomethingLong(""),
+                () => this.DoSomethingLong(""),
+                () => this.DoSomethingLong("")
+                );
+
+
+
+
+        }
+
+
+        /// <summary>
+        /// 线程异常抓取
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExceptionTest();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ExceptionTest()
+        {
+            try
+            {
+                int i = 8;
+                int j = 0;
+                int value = i / j;
+                //此时下面这个异常信息抓不到
+                throw new Exception("除数不为0");
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+
     }
 }
