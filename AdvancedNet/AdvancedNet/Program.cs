@@ -1,7 +1,7 @@
 ﻿using System;
 using Advanced.Framework;
 using AdvancedNet.Models;
-
+using AdvancedNet.Unity;
 
 namespace AdvancedNet
 {
@@ -54,11 +54,18 @@ namespace AdvancedNet
             {
                 #region 委托调用
                 //DelegteTest.Run();
-                DelegteTest.MulitiRun();
+                //DelegteTest.MulitiRun();
 
                 #endregion
             }
+            {
+                #region unity
 
+                IocTest ioc = new IocTest();
+                ioc.Test();
+
+                #endregion
+            }
         }
     }
 }

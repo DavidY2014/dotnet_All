@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.5" />
     <PackageReference Include="Microsoft.Azure.Management.DataFactories" Version="4.13.3" />
+    <PackageReference Include="Unity" Version="5.11.4" />
+    <PackageReference Include="Unity.Abstractions" Version="5.11.4" />
+    <PackageReference Include="Unity.Container" Version="5.11.5" />
+    <PackageReference Include="Unity.Interception" Version="5.11.1" />
   </ItemGroup>
 
   <ItemGroup>
