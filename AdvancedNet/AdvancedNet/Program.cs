@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading;
 using Advanced.Framework;
+using AdvancedNet.Async;
 using AdvancedNet.Models;
 using AdvancedNet.Unity;
 
@@ -10,6 +12,13 @@ namespace AdvancedNet
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            var report = new TaskReport();
+            report.Test();
+            Console.WriteLine($"main other threadid {Thread.CurrentThread}");
+
+
+
 
             //ReflectionHelper.ReflectDllInfo();
 
@@ -61,8 +70,8 @@ namespace AdvancedNet
             {
                 #region unity
 
-                IocTest ioc = new IocTest();
-                ioc.Test();
+                //IocTest ioc = new IocTest();
+                //ioc.Test();
 
                 #endregion
             }

@@ -11,6 +11,7 @@ namespace Advanced.Framework.MVC5
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        private Logger logger = new Logger(typeof(MvcApplication));
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -20,6 +21,8 @@ namespace Advanced.Framework.MVC5
 
             //Ìæ»»container factory
             ControllerBuilder.Current.SetControllerFactory(new MyControllerFactory());
+
+            this.logger.Error();
         }
     }
 }
