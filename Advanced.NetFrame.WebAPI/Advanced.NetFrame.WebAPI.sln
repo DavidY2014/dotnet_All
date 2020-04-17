@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advanced.DatastructAndAlgor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Framework", "Core.Framework\Core.Framework.csproj", "{825921A6-F61A-4E3F-918A-C40FEC5F367A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test", "Core.Test\Core.Test.csproj", "{50E40C94-3CC6-4CB7-A056-1452FE2428F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Test", "Core.Test\Core.Test.csproj", "{50E40C94-3CC6-4CB7-A056-1452FE2428F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Web.Test", "Core.Web.Test\Core.Web.Test.csproj", "{1C0A9B4A-9EA9-41BA-A760-64E354DC92A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Web.Test", "Core.Web.Test\Core.Web.Test.csproj", "{1C0A9B4A-9EA9-41BA-A760-64E354DC92A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.IdentityServer", "Core.IdentityServer\Core.IdentityServer.csproj", "{A8C43235-C956-490A-8B72-42DFECBD5E3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{1C0A9B4A-9EA9-41BA-A760-64E354DC92A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0A9B4A-9EA9-41BA-A760-64E354DC92A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C0A9B4A-9EA9-41BA-A760-64E354DC92A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C43235-C956-490A-8B72-42DFECBD5E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C43235-C956-490A-8B72-42DFECBD5E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C43235-C956-490A-8B72-42DFECBD5E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C43235-C956-490A-8B72-42DFECBD5E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

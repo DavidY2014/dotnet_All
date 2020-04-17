@@ -69,3 +69,5 @@
 /AdvancedNet/Advanced.NetcoreMVC/bin
 /AdvancedNet/Advanced.NetcoreMVC/obj
 /AdvancedNet/Advanced.NetcoreMVC/wwwroot
+/Advanced.NetFrame.WebAPI/Core.IdentityServer/obj
+/Advanced.NetFrame.WebAPI/Core.IdentityServer/wwwroot
