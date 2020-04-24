@@ -54,6 +54,11 @@ namespace Core.Test
                 app.UseDeveloperExceptionPage();
             }
 
+           
+
+
+
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

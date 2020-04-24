@@ -7,6 +7,8 @@
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="5.0.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net.Extensions.AspNetCore" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
